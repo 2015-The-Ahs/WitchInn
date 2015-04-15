@@ -5,6 +5,8 @@
  */
 package witchinn;
 
+import environment.ApplicationStarter;
+
 /**
  *
  * @author mayajones
@@ -15,7 +17,6 @@ public class WitchInn {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        ApplicationStarter.run("Witch Inn", new InnEnvironment());
     }
-    
 }
