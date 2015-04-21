@@ -1,5 +1,11 @@
 package witchinn;
 
+<<<<<<< HEAD
+=======
+import java.awt.Graphics;
+import java.awt.Point;
+
+>>>>>>> origin/smg-dragdrop-02
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -12,4 +18,63 @@ package witchinn;
  */
 public class Cupboard {
     
+<<<<<<< HEAD
+=======
+    {
+        ingredients = new Ingredient[3][4];
+        
+        getIngredients()[0][0] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
+        getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
+        getIngredients()[2][3] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
+        
+    }
+    
+    public void paint(Graphics graphics){
+        for (int row = 0; row < ingredients.length; row++){
+            for (int col = 0; col < ingredients[row].length; col++){
+                if ((ingredients[row][col] != null) && (ingredients[row][col].isVisible())){
+                    Point ingPosn = (Point) getPosition().clone();
+                    ingPosn.x += col * 50;
+                    ingPosn.y += row * 75;
+                    
+                    graphics.drawImage(ingredients[row][col].getImage(), ingPosn.x, ingPosn.y, null);
+                }
+            }
+        }
+    }
+
+    private Point position = new Point(100, 100);
+    private Ingredient[][] ingredients;
+
+    /**
+     * @return the ingredients
+     */
+    public Ingredient[][] getIngredients() {
+        return ingredients;
+    }
+
+    /**
+     * @param ingredients the ingredients to set
+     */
+    public void setIngredients(Ingredient[][] ingredients) {
+        this.setIngredients(ingredients);
+    }
+
+    /**
+     * @return the position
+     */
+    public Point getPosition() {
+        return position;
+    }
+
+    /**
+     * @param position the position to set
+     */
+    public void setPosition(Point position) {
+        this.position = position;
+    }
+
+
+    
+>>>>>>> origin/smg-dragdrop-02
 }

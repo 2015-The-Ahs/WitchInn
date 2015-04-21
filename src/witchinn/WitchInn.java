@@ -19,5 +19,4 @@ public class WitchInn {
     public static void main(String[] args) {
         ApplicationStarter.run("Witch Inn", new InnEnvironment());
     }
-    
 }
