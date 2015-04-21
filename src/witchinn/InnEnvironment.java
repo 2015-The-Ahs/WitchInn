@@ -30,6 +30,10 @@ class InnEnvironment extends Environment {
     
     }
 
+    public void DragDrop(){
+      
+        
+    }
     @Override
     public void initializeEnvironment() {
 
@@ -52,7 +56,17 @@ class InnEnvironment extends Environment {
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
-    
+        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
+        
+        
+        for (Ingredient ingredient : cupboard.getIngredientList()){
+            if (ingredient != null){
+                if (ingredient.contains(e.getPoint())){
+                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
+                    this.DragDrop();
+                }
+            }
+        }
     }
 
     @Override

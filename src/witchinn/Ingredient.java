@@ -19,7 +19,7 @@ public class Ingredient extends Actor {
     public static String TYPE_BUG = "BUG";
 
     public static Ingredient getIngredient(String type){
-        Ingredient ingredient = new Ingredient(getImage("resources/vine.png"), new Point (10, 20), new Velocity(0, 0));
+        Ingredient ingredient = new Ingredient(getImage("resources/vine.png"), new Point (10, 10), new Velocity(0, 0));
  
         return ingredient;
     }
