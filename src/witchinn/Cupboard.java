@@ -1,11 +1,9 @@
 package witchinn;
 
-<<<<<<< HEAD
-=======
 import java.awt.Graphics;
 import java.awt.Point;
+import java.util.ArrayList;
 
->>>>>>> origin/smg-dragdrop-02
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -18,15 +16,16 @@ import java.awt.Point;
  */
 public class Cupboard {
     
-<<<<<<< HEAD
-=======
     {
         ingredients = new Ingredient[3][4];
         
         getIngredients()[0][0] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
+        getIngredients()[0][0].setName("Shayla");
         getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
+        getIngredients()[1][2].setName("Gemma");
         getIngredients()[2][3] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-        
+        getIngredients()[2][3].setName("Maya");
+       
     }
     
     public void paint(Graphics graphics){
@@ -37,7 +36,7 @@ public class Cupboard {
                     ingPosn.x += col * 50;
                     ingPosn.y += row * 75;
                     
-                    graphics.drawImage(ingredients[row][col].getImage(), ingPosn.x, ingPosn.y, null);
+                    graphics.drawImage(ingredients[row][col].getImage().getScaledInstance(50, 50, 50), ingPosn.x, ingPosn.y, null);
                 }
             }
         }
@@ -45,6 +44,23 @@ public class Cupboard {
 
     private Point position = new Point(100, 100);
     private Ingredient[][] ingredients;
+    
+    /**
+     *
+     * @return
+     */
+    public ArrayList<Ingredient> getIngredientList(){
+        ArrayList<Ingredient> bad = new ArrayList<>();
+        
+        for (int row = 0; row < ingredients.length; row++) {
+            for (int col = 0; col < ingredients[row].length; col++) {
+                if (ingredients[row][col] != null){
+                    bad.add(ingredients[row][col]);
+                }
+            }
+        }
+        return bad;
+    }
 
     /**
      * @return the ingredients
@@ -73,8 +89,4 @@ public class Cupboard {
     public void setPosition(Point position) {
         this.position = position;
     }
-
-
-    
->>>>>>> origin/smg-dragdrop-02
 }

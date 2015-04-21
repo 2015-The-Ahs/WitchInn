@@ -9,35 +9,28 @@ import environment.Environment;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
-<<<<<<< HEAD
-=======
 import images.ResourceTools;
 import java.awt.Image;
 import java.awt.Point;
-
->>>>>>> origin/smg-dragdrop-02
 
 /**
  *
  * @author mayajones
  */
 class InnEnvironment extends Environment {
-<<<<<<< HEAD
-
-    public InnEnvironment() {
-=======
     private Cupboard cupboard;
-    
     
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/back_ground_green.png").getScaledInstance(900, 580, Image.SCALE_FAST));
         
         cupboard = new Cupboard();
         cupboard.setPosition(new Point(100, 100));
-    
->>>>>>> origin/smg-dragdrop-02
     }
 
+    public void DragDrop(){
+      
+        
+    }
     @Override
     public void initializeEnvironment() {
 
@@ -60,18 +53,24 @@ class InnEnvironment extends Environment {
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
-    
+        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
+        
+        
+        for (Ingredient ingredient : cupboard.getIngredientList()){
+            if (ingredient != null){
+                if (ingredient.contains(e.getPoint())){
+                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
+                    this.DragDrop();
+                }
+            }
+        }
     }
 
     @Override
     public void paintEnvironment(Graphics graphics) {
-<<<<<<< HEAD
-    
-=======
         if (cupboard != null){
             cupboard.paint(graphics);
         }
->>>>>>> origin/smg-dragdrop-02
     }
     
 }
