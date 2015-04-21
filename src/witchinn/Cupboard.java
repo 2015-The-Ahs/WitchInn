@@ -1,8 +1,11 @@
 package witchinn;
 
+<<<<<<< HEAD
+=======
 import java.awt.Graphics;
 import java.awt.Point;
 
+>>>>>>> origin/smg-dragdrop-02
 /*
  * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
@@ -15,6 +18,8 @@ import java.awt.Point;
  */
 public class Cupboard {
     
+<<<<<<< HEAD
+=======
     {
         ingredients = new Ingredient[3][4];
         
@@ -71,4 +76,5 @@ public class Cupboard {
 
 
     
+>>>>>>> origin/smg-dragdrop-02
 }

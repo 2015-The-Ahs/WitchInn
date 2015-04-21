@@ -9,16 +9,23 @@ import environment.Environment;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
+<<<<<<< HEAD
+=======
 import images.ResourceTools;
 import java.awt.Image;
 import java.awt.Point;
 
+>>>>>>> origin/smg-dragdrop-02
 
 /**
  *
  * @author mayajones
  */
 class InnEnvironment extends Environment {
+<<<<<<< HEAD
+
+    public InnEnvironment() {
+=======
     private Cupboard cupboard;
     
     
@@ -28,6 +35,7 @@ class InnEnvironment extends Environment {
         cupboard = new Cupboard();
         cupboard.setPosition(new Point(100, 100));
     
+>>>>>>> origin/smg-dragdrop-02
     }
 
     @Override
@@ -57,9 +65,13 @@ class InnEnvironment extends Environment {
 
     @Override
     public void paintEnvironment(Graphics graphics) {
+<<<<<<< HEAD
+    
+=======
         if (cupboard != null){
             cupboard.paint(graphics);
         }
+>>>>>>> origin/smg-dragdrop-02
     }
     
 }
