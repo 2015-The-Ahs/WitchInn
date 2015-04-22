@@ -17,7 +17,7 @@ import java.util.ArrayList;
 public class Cupboard {
     
     {
-        ingredients = new Ingredient[3][4];
+        ingredients = new Ingredient[4][5];
         
         getIngredients()[0][0] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
         getIngredients()[0][0].setName("Shayla");
@@ -25,6 +25,8 @@ public class Cupboard {
         getIngredients()[1][2].setName("Gemma");
         getIngredients()[2][3] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
         getIngredients()[2][3].setName("Maya");
+        getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
+        getIngredients()[3][4].setName("Cara");
        
     }
     
@@ -35,7 +37,7 @@ public class Cupboard {
                     Point ingPosn = (Point) getPosition().clone();
                     ingPosn.x += col * 50;
                     ingPosn.y += row * 75;
-                    
+                    ingredients[row][col].setPosition(ingPosn);
                     graphics.drawImage(ingredients[row][col].getImage().getScaledInstance(50, 50, 50), ingPosn.x, ingPosn.y, null);
                 }
             }
