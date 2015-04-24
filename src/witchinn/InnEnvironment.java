@@ -31,27 +31,25 @@ class InnEnvironment extends Environment {
       
         
     }
-    @Override
     public void initializeEnvironment() {
 
     }
 
-    @Override
     public void timerTaskHandler() {
     
     }
 
-    @Override
+    
     public void keyPressedHandler(KeyEvent e){
     
     }
 
-    @Override
+   
     public void keyReleasedHandler(KeyEvent e) {
     
     }
 
-    @Override
+    
     public void environmentMouseClicked(MouseEvent e) {
         System.out.println("Meese - click" + e.getX() + " , " + e.getY());
         
@@ -66,7 +64,7 @@ class InnEnvironment extends Environment {
         }
     }
 
-    @Override
+   
     public void paintEnvironment(Graphics graphics) {
         if (cupboard != null){
             cupboard.paint(graphics);
