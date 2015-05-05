@@ -6,6 +6,7 @@
 package witchinn;
 
 import environment.Environment;
+import environment.Velocity;
 import java.awt.Graphics;
 import java.awt.event.KeyEvent;
 import java.awt.event.MouseEvent;
@@ -27,6 +28,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     int mx, my;
     
     Ingredient selected;
+    Cauldron cauldron;
 
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/back_ground_green.png").getScaledInstance(900, 580, Image.SCALE_FAST));
@@ -34,6 +36,9 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         cupboard = new Cupboard();
         cupboard.setPosition(new Point(100, 100));
         addMouseMotionListener(this);
+        cauldron = new Cauldron(new Point(350,350), new Velocity(0,0));
+        this.getActors().add(cauldron);
+
     }
 
     public static void main(String[] arg) {
@@ -93,6 +98,10 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             selected.paint(graphics);
             System.out.println("pict ");
         }
+        
+//        if (cauldron != null){
+//            cauldron.paint(graphics);
+//        }
     }
 
     private void setResizable(boolean b) {
