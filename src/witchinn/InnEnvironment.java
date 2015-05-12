@@ -29,6 +29,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     
     Ingredient selected;
     Cauldron cauldron;
+    private Ingredient ingredient;
 
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/back_ground_green.png").getScaledInstance(900, 580, Image.SCALE_FAST));
@@ -39,6 +40,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         cauldron = new Cauldron(new Point(350,350), new Velocity(0,0));
         this.getActors().add(cauldron);
 
+    
+        
     }
 
     public static void main(String[] arg) {
@@ -99,10 +102,17 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             System.out.println("pict ");
         }
         
-//        if (cauldron != null){
-//            cauldron.paint(graphics);
-//        }
+
     }
+    
+
+    
+        private void dissapear{
+            if(cauldron == ingredient){
+            ingredient.setPosition(100000000, 10000000000);
+        }  
+    
+}
 
     private void setResizable(boolean b) {
 
