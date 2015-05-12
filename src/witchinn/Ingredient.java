@@ -70,7 +70,7 @@ public class Ingredient extends Actor {
         this.visible = visible;
     }
 
-<<<<<<< HEAD
+
 //    public void setName(String shayla) {
 //        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
 //    }
@@ -92,7 +92,7 @@ public class Ingredient extends Actor {
 //    }
     
     
-=======
+
     /**
      * @return the preferredSize
      */
@@ -107,5 +107,5 @@ public class Ingredient extends Actor {
         this.preferredSize = preferredSize;
     }
 
->>>>>>> origin/smg-selections-03
+
 }
