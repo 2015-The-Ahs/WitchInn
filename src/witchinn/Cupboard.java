@@ -9,16 +9,15 @@ import java.util.ArrayList;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-
 /**
  *
  * @author mayajones
  */
 public class Cupboard {
-    
+
     {
         ingredients = new Ingredient[4][5];
-        
+
         getIngredients()[0][0] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
         getIngredients()[0][0].setName("Shayla");
         getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
@@ -27,18 +26,19 @@ public class Cupboard {
         getIngredients()[2][3].setName("Maya");
         getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
         getIngredients()[3][4].setName("Cara");
-       
+
     }
-    
-    public void paint(Graphics graphics){
-        for (int row = 0; row < ingredients.length; row++){
-            for (int col = 0; col < ingredients[row].length; col++){
-                if ((ingredients[row][col] != null) && (ingredients[row][col].isVisible())){
+
+    public void paint(Graphics graphics) {
+        for (int row = 0; row < ingredients.length; row++) {
+            for (int col = 0; col < ingredients[row].length; col++) {
+                if ((ingredients[row][col] != null) && (ingredients[row][col].isVisible())) {
                     Point ingPosn = (Point) getPosition().clone();
                     ingPosn.x += col * 50;
                     ingPosn.y += row * 75;
                     ingredients[row][col].setPosition(ingPosn);
-                    graphics.drawImage(ingredients[row][col].getImage().getScaledInstance(50, 50, 50), ingPosn.x, ingPosn.y, null);
+//                    graphics.drawImage(ingredients[row][col].getScaledImage(), ingPosn.x, ingPosn.y, null);
+                    ingredients[row][col].paint(graphics);
                 }
             }
         }
@@ -46,17 +46,17 @@ public class Cupboard {
 
     private Point position = new Point(100, 100);
     private Ingredient[][] ingredients;
-    
+
     /**
      *
      * @return
      */
-    public ArrayList<Ingredient> getIngredientList(){
+    public ArrayList<Ingredient> getIngredientList() {
         ArrayList<Ingredient> bad = new ArrayList<>();
-        
+
         for (int row = 0; row < ingredients.length; row++) {
             for (int col = 0; col < ingredients[row].length; col++) {
-                if (ingredients[row][col] != null){
+                if (ingredients[row][col] != null) {
                     bad.add(ingredients[row][col]);
                 }
             }
