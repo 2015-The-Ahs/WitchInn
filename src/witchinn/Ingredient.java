@@ -21,15 +21,8 @@ public class Ingredient extends Actor {
 
     public static String TYPE_BUG = "BUG";
 
-<<<<<<< HEAD
-    public static Ingredient getIngredient(String type){
-        Ingredient ingredient = new Ingredient(getImage("resources/cactus.PNG"), new Point (10, 10), new Velocity(0, 0));
- 
-=======
     public static Ingredient getIngredient(String type) {
         Ingredient ingredient = new Ingredient(loadImage("resources/vine.png"), new Point(10, 10), new Velocity(0, 0));
-
->>>>>>> origin/master
         return ingredient;
     }
 
@@ -76,28 +69,6 @@ public class Ingredient extends Actor {
         this.visible = visible;
     }
 
-
-//    public void setName(String shayla) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public Object getImage() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public boolean contains(Point point) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public String getName() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-//
-//    public Object getObjectBoundary() {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
-    
-    
 
     /**
      * @return the preferredSize
