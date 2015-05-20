@@ -21,7 +21,7 @@ class InnEnvironment extends Environment {
     private Cupboard cupboard;
     
     public InnEnvironment() {
-        this.setBackground(ResourceTools.loadImageFromResource("resources/back_ground_green.png").getScaledInstance(900, 580, Image.SCALE_FAST));
+        this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
         
         cupboard = new Cupboard();
         cupboard.setPosition(new Point(100, 100));
