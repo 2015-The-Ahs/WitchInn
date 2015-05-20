@@ -26,7 +26,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
     private Cupboard cupboard;
     int mx, my;
-    
+
     Ingredient selected;
     Cauldron cauldron;
     private Ingredient ingredient;
@@ -37,17 +37,14 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         cupboard = new Cupboard();
         cupboard.setPosition(new Point(100, 100));
         addMouseMotionListener(this);
-        cauldron = new Cauldron(new Point(350,350), new Velocity(0,0));
+        cauldron = new Cauldron(new Point(350, 350), new Velocity(0, 0));
         this.getActors().add(cauldron);
 
-    
-        
     }
 
     public static void main(String[] arg) {
         witchinn.Mouse Mouse = new Mouse();
     }
-
 
     @Override
     public void initializeEnvironment() {
@@ -71,17 +68,19 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
-        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
+//        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
 
         for (Ingredient ingredient : cupboard.getIngredientList()) {
             if (ingredient != null) {
                 if (ingredient.contains(e.getPoint())) {
-                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
-                    
+//                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
+
                     try {
                         selected = ingredient.clone();
-                        System.out.println("unga bunga");
+                        selected.setPosition(e.getPoint());
                         
+//                        System.out.println("unga bunga");
+
                     } catch (CloneNotSupportedException ex) {
                         Logger.getLogger(InnEnvironment.class.getName()).log(Level.SEVERE, null, ex);
                     }
@@ -96,23 +95,20 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         if (cupboard != null) {
             cupboard.paint(graphics);
         }
-        
-        if (selected != null){
+
+        if (selected != null) {
             selected.paint(graphics);
-            System.out.println("pict ");
+//            System.out.println("pict ");
         }
-        
 
     }
-    
 
     
-        private void dissapear{
-            if(cauldron == ingredient){
-            ingredient.setPosition(100000000, 10000000000);
-        }  
-    
-}
+    private void dissapear() {
+        if (true) {
+            ingredient.setPosition(100_000, 100_000);
+        }
+    }
 
     private void setResizable(boolean b) {
 
@@ -127,13 +123,20 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     public void mouseDragged(MouseEvent e) {
         mx = e.getX();
         my = e.getY();
-      
-        if (selected != null){
+
+        if (selected != null) {
             selected.setPosition(e.getPoint());
+            if (selected.intersects(cauldron)){
+                System.out.println("qwertyurtyusdfgh");
+                // make a sound
+                // set selected to null
+                // check things off the receipe
+            }
+            
         }
-        
+
     }
-    
+
     @Override
     public void mouseMoved(MouseEvent e) {
         mx = e.getX();
