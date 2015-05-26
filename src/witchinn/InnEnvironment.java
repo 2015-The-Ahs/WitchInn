@@ -24,7 +24,6 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import javax.swing.JFrame;
 
 /**
  *
@@ -38,6 +37,10 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     Ingredient selected;
     Cauldron cauldron;
     private Ingredient ingredient;
+    private Recipe recipe;
+    
+    
+    private boolean showRecipe = false;
 
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
@@ -47,6 +50,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         cauldron = new Cauldron(new Point(350, 350), new Velocity(0, 0));
         this.getActors().add(cauldron);
 
+        this.recipe = new Recipe();
+        
     }
 
     public static void main(String[] arg) {
@@ -77,6 +82,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             soundManager.play(Magic_Music);
             } else if (e.getKeyCode() == KeyEvent.VK_0){
             soundManager.play(Magic_Music, Audio.LOOP_INFINITE);
+        } else if (e.getKeyCode() == KeyEvent.VK_R){
+            showRecipe = !showRecipe;
         }
     }
 
@@ -92,19 +99,21 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
     }
 
+    @Override
     public void keyReleasedHandler(KeyEvent e) {
     }
 
+    @Override
     public void environmentMouseClicked(MouseEvent e) {
 //        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
 
-        for (Ingredient ingredient : cupboard.getIngredientList()) {
-            if (ingredient != null) {
-                if (ingredient.contains(e.getPoint())) {
+        for (Ingredient myIngredient : cupboard.getIngredientList()) {
+            if (myIngredient != null) {
+                if (myIngredient.contains(e.getPoint())) {
 //                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
 
                     try {
-                        selected = ingredient.clone();
+                        selected = myIngredient.clone();
                         selected.setPosition(e.getPoint());
 //                        System.out.println("unga bunga");
                     } catch (CloneNotSupportedException ex) {
@@ -116,6 +125,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         }
     }
 
+    @Override
     public void paintEnvironment(Graphics graphics) {
         if (cupboard != null) {
             cupboard.paint(graphics);
@@ -124,6 +134,10 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         if (selected != null) {
             selected.paint(graphics);
 //            System.out.println("pict ");
+        }
+        
+        if ((recipe != null) && (showRecipe)){
+            recipe.draw(graphics);
         }
 
     }
