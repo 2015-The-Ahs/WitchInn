@@ -14,19 +14,24 @@ import java.awt.Image;
  * @author mayajones
  */
 public class Recipe {
-    private Image book;
+   private Image book;
     private String text = "";
     
     public Recipe(){
         book = ResourceTools.loadImageFromResource("resources/old_book.png");
-        text = "This is a very \n fun thing to do";
+        text = "swaggygswaygwysgsway";
     }
 
     void draw(Graphics graphics) {
-        graphics.drawImage(book, 90, 90, null);
-        graphics.drawString(text, 120, 120);
+        graphics.drawImage(book, 140, 90, null);
+        graphics.drawString(text, 250, 140);
         
     }
  
     
 }
+
+//Change font
+//Color of text
+//Format the ingredients (into lines)
+//Pictures
