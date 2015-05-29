@@ -19,12 +19,16 @@ public class Recipe {
    private Image book;
     private String text = "";
     private String text2 = "";
+    private String text3 = "";
+    private String text4 = "";
     private Color color;
     
     public Recipe(){
         book = ResourceTools.loadImageFromResource("resources/old_book.png");
         text = "swaggygswaygwysgsway";
         text2 = "mr. lawrence can't kobe";
+        text3 = "but maya can";
+        text4= "this spacing is bomb";
         
     }
 
@@ -33,6 +37,10 @@ public class Recipe {
         graphics.setFont(new Font("Comic Sans", Font.PLAIN, 12));
         graphics.setColor(Color.RED);
         graphics.drawString(text, 250, 140);
+        graphics.drawString(text2, 250, 160);
+        graphics.drawString(text3, 250, 180);
+        graphics.drawString(text4, 250, 200);
+
 
         
         
