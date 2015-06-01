@@ -19,10 +19,32 @@ import java.awt.Point;
  */
 public class Ingredient extends Actor {
 
-    public static String TYPE_BUG = "BUG";
+    public static String TYPE_VINE = "VINE";
+    public static String TYPE_TURTLE = "TURTLE";
+    public static String TYPE_TREE = "TREE";
+    public static String TYPE_CACTUS = "CACTUS";
+    public static String TYPE_BULB = "BULB";
+    public static String TYPE_DAGGER = "DAGGER";
+    public static String TYPE_EARTH = "EARTH";
+    public static String TYPE_EGGSHELLS = "EGGSHELLS";
+    public static String TYPE_EYES = "EYES";
+    public static String TYPE_GAS = "GAS";
+    public static String TYPE_GRASS = "GRASS";
+    public static String TYPE_GREENS = "GREENS";
+    public static String TYPE_MUSHROOMS = "MUSHROOMS";
+    public static String TYPE_PETALS = "PETALS";
+    public static String TYPE_PINK = "PINK";
+    public static String TYPE_ROSE = "ROSE";
+    public static String TYPE_SAGE = "SAGE";
+    public static String TYPE_SHELLS = "SHELLS";
+    public static String TYPE_SMALLPLANT = "SMALLPLANT";
+    public static String TYPE_SUNLIGHT = "SUNLIGHT";
+    public static String TYPE_VASE = "VASE";
+    
 
     public static Ingredient getIngredient(String type) {
         Ingredient ingredient = new Ingredient(loadImage("resources/vine.png"), new Point(10, 10), new Velocity(0, 0));
+        
         return ingredient;
     }
 
