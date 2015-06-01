@@ -24,7 +24,7 @@ public class Cauldron extends Actor {
     }
 
     {
-        setImage(ResourceTools.loadImageFromResource("resources/cauldron.jpeg"));
+        setImage(ResourceTools.loadImageFromResource("resources/EmptyC.PNG"));
     }
     
     public Cauldron(Point position, Velocity velocity) {
