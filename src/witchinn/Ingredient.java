@@ -43,8 +43,11 @@ public class Ingredient extends Actor {
     
 
     public static Ingredient getIngredient(String type) {
+
         Ingredient ingredient = new Ingredient(loadImage("resources/vine.png"), new Point(10, 10), new Velocity(0, 0));
         
+
+     
         return ingredient;
     }
 
