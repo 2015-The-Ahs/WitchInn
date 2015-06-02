@@ -20,11 +20,20 @@ import java.awt.Point;
 public class Ingredient extends Actor {
 
     public static String TYPE_BUG = "BUG";
+    public static final String INGREDIENT_NEWT_WINGS = "Newt Wings";
+    
 
-    public static Ingredient getIngredient(String type) {
+    public static Ingredient getIngredient(String name) {
         Ingredient ingredient = new Ingredient(loadImage("resources/vine.png"), new Point(10, 10), new Velocity(0, 0));
-        return ingredient;
+        ingredient.setName(name);
+        return ingredient;   
     }
+    
+    public Ingredient(Image image, Point position, Velocity velocity) {
+        super(image, position, velocity);
+    }
+
+
 
     @Override
     public Ingredient clone() throws CloneNotSupportedException {
@@ -48,12 +57,9 @@ public class Ingredient extends Actor {
         preferredSize = new Dimension(50, 50);
     }
 
-    public Ingredient(Image image, Point position, Velocity velocity) {
-        super(image, position, velocity);
-    }
-
     private boolean visible = true;
     private Dimension preferredSize;
+    private String name;
 
     /**
      * @return the visible
@@ -82,6 +88,20 @@ public class Ingredient extends Actor {
      */
     public void setPreferredSize(Dimension preferredSize) {
         this.preferredSize = preferredSize;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
 
