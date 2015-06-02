@@ -24,6 +24,8 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static javax.swing.Spring.height;
+import static javax.swing.Spring.width;
 
 /**
  *
@@ -47,7 +49,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         cupboard = new Cupboard();
         cupboard.setPosition(new Point(100, 100));
         addMouseMotionListener(this);
-        cauldron = new Cauldron(new Point(350, 350), new Velocity(0, 0));
+        cauldron = new Cauldron(new Point(350, 350), new Velocity(0,0));
+        
         this.getActors().add(cauldron);
 
         this.recipe = new Recipe();
@@ -166,10 +169,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         if (selected != null) {
             selected.setPosition(e.getPoint());
             if (selected.intersects(cauldron)){
-                System.out.println("qwertyurtyusdfgh");
-                // make a sound
-                // set selected to null
-                // check things off the receipe
+                System.out.println("Hit");
+                
             }
             
         }

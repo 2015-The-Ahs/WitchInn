@@ -19,36 +19,42 @@ import java.awt.Point;
  */
 public class Ingredient extends Actor {
 
-    public static String TYPE_VINE = "VINE";
-    public static String TYPE_TURTLE = "TURTLE";
-    public static String TYPE_TREE = "TREE";
-    public static String TYPE_CACTUS = "CACTUS";
-    public static String TYPE_BULB = "BULB";
-    public static String TYPE_DAGGER = "DAGGER";
-    public static String TYPE_EARTH = "EARTH";
-    public static String TYPE_EGGSHELLS = "EGGSHELLS";
-    public static String TYPE_EYES = "EYES";
-    public static String TYPE_GAS = "GAS";
-    public static String TYPE_GRASS = "GRASS";
-    public static String TYPE_GREENS = "GREENS";
-    public static String TYPE_MUSHROOMS = "MUSHROOMS";
-    public static String TYPE_PETALS = "PETALS";
-    public static String TYPE_PINK = "PINK";
-    public static String TYPE_ROSE = "ROSE";
-    public static String TYPE_SAGE = "SAGE";
-    public static String TYPE_SHELLS = "SHELLS";
-    public static String TYPE_SMALLPLANT = "SMALLPLANT";
-    public static String TYPE_SUNLIGHT = "SUNLIGHT";
-    public static String TYPE_VASE = "VASE";
+    public static final String INGREDIENT_VINE = "VINE";
+    public static final String INGREDIENT_TURTLE = "TURTLE";
+    public static final String INGREDIENT_TREE = "TREE";
+    public static final String INGREDIENT_CACTUS = "CACTUS";
+    public static final String INGREDIENT_BULB = "BULB";
+    public static final String INGREDIENT_DAGGER = "DAGGER";
+    public static final String INGREDIENT_EARTH = "EARTH";
+    public static final String INGREDIENT_EGGSHELLS = "EGGSHELLS";
+    public static final String INGREDIENT_EYES = "EYES";
+    public static final String INGREDIENT_GAS = "GAS";
+    public static final String INGREDIENT_GRASS = "GRASS";
+    public static final String INGREDIENT_GREENS = "GREENS";
+    public static final String INGREDIENT_MUSHROOMS = "MUSHROOMS";
+    public static final String INGREDIENT_PETALS = "PETALS";
+    public static final String INGREDIENT_PINK = "PINK";
+    public static final String INGREDIENT_ROSE = "ROSE";
+    public static final String INGREDIENT_SAGE = "SAGE";
+    public static final String INGREDIENT_SHELLS = "SHELLS";
+    public static final String INGREDIENT_SMALLPLANT = "SMALLPLANT";
+    public static final String INGREDIENT_SUNLIGHT = "SUNLIGHT";
+    public static final String INGREDIENT_VASE = "VASE";
     
 
-    public static Ingredient getIngredient(String type) {
+    public static Ingredient getIngredient(String name) {
 
-        Ingredient ingredient = new Ingredient(loadImage("resources/vine.png"), new Point(10, 10), new Velocity(0, 0));
-        
-
-     
-        return ingredient;
+        switch (name){
+            case INGREDIENT_TURTLE:
+                return new Ingredient(loadImage("resources/turtle.png"), new Point(30, 10));
+                
+            case INGREDIENT_TREE:
+                return new Ingredient(loadImage("resources/tree.PNG"), new Point(60, 10));
+                
+            default:
+            case INGREDIENT_VINE:
+                return new Ingredient(loadImage("resources/vine.png"), new Point(10, 10));
+        }
     }
 
     @Override
@@ -73,8 +79,9 @@ public class Ingredient extends Actor {
         preferredSize = new Dimension(50, 50);
     }
 
-    public Ingredient(Image image, Point position, Velocity velocity) {
-        super(image, position, velocity);
+//    public Ingredient(Image image, Point position, Velocity velocity) {
+    public Ingredient(Image image, Point position) {
+        super(image, position, new Velocity(0, 0));
     }
 
     private boolean visible = true;

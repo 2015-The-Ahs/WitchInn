@@ -18,14 +18,8 @@ public class Cupboard {
     {
         ingredients = new Ingredient[4][5];
 
-        getIngredients()[1][0] = Ingredient.getIngredient(Ingredient.TYPE_VINE);
-        getIngredients()[1][0].setName("vine");
-//        getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-//        getIngredients()[1][2].setName("Gemma");
-//        getIngredients()[2][3] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-//        getIngredients()[2][3].setName("Maya");
-        getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.TYPE_VINE);
-        getIngredients()[3][4].setName("vine");
+        getIngredients()[1][0] = Ingredient.getIngredient(Ingredient.INGREDIENT_VINE);
+        getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_TURTLE);
 
     }
 
