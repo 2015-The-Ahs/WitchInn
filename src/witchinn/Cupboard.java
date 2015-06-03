@@ -16,11 +16,14 @@ import java.util.ArrayList;
 public class Cupboard {
 
     {
-        ingredients = new Ingredient[4][5];
+        ingredients = new Ingredient[2][11];
 
         getIngredients()[1][0] = Ingredient.getIngredient(Ingredient.INGREDIENT_VINE);
-        getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_TURTLE);
-
+        getIngredients()[1][3] = Ingredient.getIngredient(Ingredient.INGREDIENT_TURTLE);
+        getIngredients()[1][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_TREE);
+        getIngredients()[1][5] = Ingredient.getIngredient(Ingredient.INGREDIENT_BULB);
+        
+        
     }
 
     public void paint(Graphics graphics) {
@@ -38,7 +41,7 @@ public class Cupboard {
         }
     }
 
-    private Point position = new Point(100, 100);
+    private Point position = new Point(50, 50);
     private Ingredient[][] ingredients;
 
     /**
