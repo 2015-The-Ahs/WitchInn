@@ -24,8 +24,7 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import static javax.swing.Spring.height;
-import static javax.swing.Spring.width;
+import static witchinn.Recipe.*;
 
 /**
  *
@@ -40,9 +39,11 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     Cauldron cauldron;
     private Ingredient ingredient;
     private Recipe recipe;
+//    private Recipe recipebooktwo;
     
     
     private boolean showRecipe = false;
+//    private boolean showRecipebooktwo = false;
 
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
@@ -53,7 +54,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         
         this.getActors().add(cauldron);
 
-        this.recipe = new Recipe();
+        this.recipe = new Recipe(RECIPE_POACHED_NEWT_WINGS);
+//        this.recipebooktwo = new Recipe();
         
     }
 
@@ -85,10 +87,14 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             soundManager.play(Magic_Music);
             } else if (e.getKeyCode() == KeyEvent.VK_0){
             soundManager.play(Magic_Music, Audio.LOOP_INFINITE);
-        } else if (e.getKeyCode() == KeyEvent.VK_R){
+        } else if (e.getKeyCode() == KeyEvent.VK_R)
             showRecipe = !showRecipe;
-        }
-    }
+//        } else if (e.getKeyCode() == KeyEvent.VK_J)
+//            showRecipebooktwo = !showRecipebooktwo;
+        
+            }
+
+
 
     private class AudioEventListener implements AudioEventListenerIntf {
 
@@ -142,11 +148,15 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         if ((recipe != null) && (showRecipe)){
             recipe.draw(graphics);
         }
-
+        
+//         if ((recipebooktwo != null) && (showRecipe)){
+//            recipebooktwo.draw(graphics);
+//        }
+       
     }
 
     
-    private void dissapear() {
+    private void disappear() {
         if (true) {
             ingredient.setPosition(100_000, 100_000);
         }
