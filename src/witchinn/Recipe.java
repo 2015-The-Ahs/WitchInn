@@ -11,8 +11,7 @@ import java.awt.Image;
 import java.awt.Color;
 import java.awt.Font;
 import java.util.ArrayList;
-import static witchinn.Ingredient.INGREDIENT_NEWT_WINGS;
-import static witchinn.Ingredient.getIngredient;
+import static witchinn.Ingredient.*;
 
 /**
  *
@@ -33,8 +32,6 @@ public class Recipe {
     public static final String RECIPE_GEMMA = "Grits 'n Gemma";
     public static final String RECIPE_MAYA = "Minced Maya";
 
-
-
     
     public static Recipe getRecipe(String recipeName){
         Recipe recipe = new Recipe(recipeName);
@@ -42,42 +39,41 @@ public class Recipe {
         switch (recipeName){
             
             case RECIPE_ANOTHER:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
             
             
             default:
             case RECIPE_POACHED_NEWT_WINGS:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
                 
             case RECIPE_CARA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
                 
             case RECIPE_SHAYLA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
             
             case RECIPE_GEMMA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
             
             case RECIPE_MAYA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_NEWT_WINGS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
             
         }
         
         return recipe;
     }
-        
     
     
     {
