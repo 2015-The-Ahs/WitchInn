@@ -39,11 +39,9 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     Cauldron cauldron;
     private Ingredient ingredient;
     private Recipe recipe;
-//    private Recipe recipebooktwo;
     
     
     private boolean showRecipe = false;
-//    private boolean showRecipebooktwo = false;
 
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
@@ -54,8 +52,12 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         
         this.getActors().add(cauldron);
 
-        this.recipe = new Recipe(RECIPE_VINE_SALAD);
-//        this.recipebooktwo = new Recipe();
+        this.recipe = new Recipe(RECIPE_LOVE_POTION);
+        this.recipe = new Recipe(RECIPE_HAPPY_PLACE);
+        this.recipe = new Recipe(RECIPE_REVENGE);
+        this.recipe = new Recipe(RECIPE_KNOWLEDGE);
+        this.recipe = new Recipe(RECIPE_REVENGE);
+//     
         
     }
 

@@ -24,12 +24,11 @@ import static witchinn.Ingredient.*;
  */
 public class Recipe {
 
-    public static final String RECIPE_ANOTHER = "Another....";
-    public static final String RECIPE_VINE_SALAD = "Vine Salad";
-    public static final String RECIPE_CARA = "Caramelized Cara";
-    public static final String RECIPE_SHAYLA = "Sautéed Shayla";
-    public static final String RECIPE_GEMMA = "Grits 'n Gemma";
-    public static final String RECIPE_MAYA = "Minced Maya";
+    public static final String RECIPE_LOVE_POTION = "Love Potion";       
+    public static final String RECIPE_HAPPY_PLACE = "Happy Place";
+    public static final String RECIPE_REVENGE = "Revenge";
+    public static final String RECIPE_KNOWLEDGE = "Knowledge";
+    public static final String RECIPE_BETWEEN_A_ROCK_AND_A_HARD_PLACE = "Between a Rock and a Hard Place";
 
     private static Font loadFont(String resource, float size) {
         Font font = null;
@@ -49,35 +48,38 @@ public class Recipe {
 
         switch (recipeName) {
 
-            case RECIPE_ANOTHER:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+            case RECIPE_LOVE_POTION:
+                recipe.getIngredients().add(getIngredient(INGREDIENT_SUNLIGHT));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_EARTH));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_PETALS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_EGGSHELLS));
                 break;
 
             default:
-            case RECIPE_VINE_SALAD:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+            case RECIPE_HAPPY_PLACE:
+                recipe.getIngredients().add(getIngredient(INGREDIENT_MUSHROOMS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_EYES));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_GRASS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_GAS));
                 break;
 
-            case RECIPE_CARA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+            case RECIPE_REVENGE:
+                recipe.getIngredients().add(getIngredient(INGREDIENT_ROSE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_DAGGER));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_TREE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_BULB));
                 break;
 
-            case RECIPE_SHAYLA:
+            case RECIPE_KNOWLEDGE:
+//                recipe.getIngredients().add(getIngredient(INGREDIENT_BOOK));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_SAGE));
                 recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_GRASS));
                 break;
 
-            case RECIPE_GEMMA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                break;
-
-            case RECIPE_MAYA:
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
-                recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
+            case RECIPE_BETWEEN_A_ROCK_AND_A_HARD_PLACE:
+                recipe.getIngredients().add(getIngredient(INGREDIENT_CACTUS));
+                recipe.getIngredients().add(getIngredient(INGREDIENT_TURTLE));            
                 break;
 
         }
@@ -166,4 +168,3 @@ public class Recipe {
     }
 
 }
-
