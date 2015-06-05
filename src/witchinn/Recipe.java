@@ -26,7 +26,7 @@ public class Recipe {
     private Color color;
 
     public static final String RECIPE_ANOTHER = "Another....";
-    public static final String RECIPE_POACHED_NEWT_WINGS = "Poached Newt Wings";
+    public static final String RECIPE_VINE_SALAD = "Vine Salad";
     public static final String RECIPE_CARA = "Caramelized Cara";
     public static final String RECIPE_SHAYLA = "Sautéed Shayla";
     public static final String RECIPE_GEMMA = "Grits 'n Gemma";
@@ -45,7 +45,7 @@ public class Recipe {
             
             
             default:
-            case RECIPE_POACHED_NEWT_WINGS:
+            case RECIPE_VINE_SALAD:
                 recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 recipe.getIngredients().add(getIngredient(INGREDIENT_VINE));
                 break;
@@ -77,14 +77,14 @@ public class Recipe {
     
     
     {
-        setBook(ResourceTools.loadImageFromResource("resources/old_book.png"));
+        setBook(ResourceTools.loadImageFromResource("resources/book.PNG").getScaledInstance(600, 430, Image.SCALE_FAST));
         setIngredients(new ArrayList<>());
         
         setTitle("");
     }
     
     public Recipe(String title) {
-        book = ResourceTools.loadImageFromResource("resources/old_book.png");
+        book = (ResourceTools.loadImageFromResource("resources/book.PNG").getScaledInstance(600, 430, Image.SCALE_FAST));
         this.title = title;
     }
 

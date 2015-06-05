@@ -54,7 +54,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         
         this.getActors().add(cauldron);
 
-        this.recipe = new Recipe(RECIPE_POACHED_NEWT_WINGS);
+        this.recipe = new Recipe(RECIPE_VINE_SALAD);
 //        this.recipebooktwo = new Recipe();
         
     }
