@@ -103,17 +103,15 @@ public class Ingredient extends Actor {
                 return new Ingredient(loadImage("resources/sunlight.PNG"), new Point(10, 10)); 
                 
             case INGREDIENT_VASE:
-<<<<<<< HEAD
+
                 return new Ingredient(loadImage("resources/vase.PNG"), new Point(10, 10)); 
                 
     
-=======
-                return new Ingredient(loadImage("resources/vase.PNG"), new Point(10, 10));  
                 
             default:
             case INGREDIENT_VINE:
                 return new Ingredient(loadImage("resources/vine.png"), new Point(10, 10));
->>>>>>> origin/smg-lost-in-space
+
         }
     }
 //=======
