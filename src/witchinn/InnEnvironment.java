@@ -47,9 +47,9 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
         cupboard = new Cupboard();
-        cupboard.setPosition(new Point(100, 100));
+        cupboard.setPosition(new Point(10, 85));
         addMouseMotionListener(this);
-        cauldron = new Cauldron(new Point(350, 350), new Velocity(0,0));
+        cauldron = new Cauldron(new Point(150, 450), new Velocity(0,0));
         
         this.getActors().add(cauldron);
 
