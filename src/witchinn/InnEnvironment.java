@@ -5,6 +5,7 @@
  */
 package witchinn;
 
+import audio.AudioPlayer;
 import audio.Audio;
 import audio.AudioEvent;
 import audio.AudioEventListenerIntf;
@@ -68,11 +69,13 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     }
     private SoundManager soundManager;
     private static final String Magic_Music = "Magic";
+    private static final String water = "Water";
+    
 
     private ArrayList<Track> getTracks() {
         ArrayList<Track> tracks = new ArrayList<>();
         tracks.add(new Track(Magic_Music, Source.RESOURCE, "/resources/witch_music.wav"));
-
+        tracks.add(new Track(water, Source.RESOURCE, "/resources/water_plop.wav"));
         return tracks;
     }
 
@@ -84,17 +87,24 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             soundManager.play(Magic_Music, Audio.LOOP_INFINITE);
         } else if (e.getKeyCode() == KeyEvent.VK_R){
             showRecipe = !showRecipe;
-        }
+        }else if (e.getKeyCode() == KeyEvent.VK_P)
+            soundManager.play(water);
     }
 
     private class AudioEventListener implements AudioEventListenerIntf {
 
         @Override
         public void onAudioEvent(AudioEvent event, String trackName) {
-            System.out.printf("Audio Event %s on track %s/n", event, trackName);
+         System.out.printf("Audio Event %s on track %s/n", event, trackName);
         }
     }
+    static {
+        
+            AudioPlayer.play("/resources/witch_music.wav");
+    }
 
+
+    @Override
     public void timerTaskHandler() {
 
     }
@@ -166,7 +176,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         if (selected != null) {
             selected.setPosition(e.getPoint());
             if (selected.intersects(cauldron)){
-                System.out.println("qwertyurtyusdfgh");
+                System.out.println("success");
                 // make a sound
                 // set selected to null
                 // check things off the receipe
