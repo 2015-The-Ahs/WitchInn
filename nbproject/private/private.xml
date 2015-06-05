@@ -2,6 +2,7 @@
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+<<<<<<< HEAD
         <group>
             <file>file:/Users/Shayla/NetBeansProjects/WitchInn/src/witchinn/Cauldron.java</file>
             <file>file:/Users/Shayla/NetBeansProjects/WitchInn/src/witchinn/Cupboard.java</file>
@@ -10,5 +11,8 @@
             <file>file:/Users/Shayla/NetBeansProjects/WitchInn/src/witchinn/InnEnvironment.java</file>
             <file>file:/Users/Shayla/NetBeansProjects/WitchInn/src/witchinn/Ingredient.java</file>
         </group>
+=======
+        <group/>
+>>>>>>> origin/smg-lost-in-space
     </open-files>
 </project-private>

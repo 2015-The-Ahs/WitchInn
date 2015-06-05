@@ -51,10 +51,6 @@ public class Ingredient extends Actor {
             case INGREDIENT_TREE:
                 return new Ingredient(loadImage("resources/tree.PNG"), new Point(10, 10));
                 
-            default:
-            case INGREDIENT_VINE:
-                return new Ingredient(loadImage("resources/vine.png"), new Point(10, 10));
-           
             case INGREDIENT_CACTUS:
                 return new Ingredient(loadImage("resources/cactus.PNG"), new Point(10, 10));
                 
@@ -107,11 +103,35 @@ public class Ingredient extends Actor {
                 return new Ingredient(loadImage("resources/sunlight.PNG"), new Point(10, 10)); 
                 
             case INGREDIENT_VASE:
+<<<<<<< HEAD
                 return new Ingredient(loadImage("resources/vase.PNG"), new Point(10, 10)); 
                 
     
+=======
+                return new Ingredient(loadImage("resources/vase.PNG"), new Point(10, 10));  
+                
+            default:
+            case INGREDIENT_VINE:
+                return new Ingredient(loadImage("resources/vine.png"), new Point(10, 10));
+>>>>>>> origin/smg-lost-in-space
         }
     }
+//=======
+//    public static String TYPE_BUG = "BUG";
+//    public static final String INGREDIENT_NEWT_WINGS = "Newt Wings";
+    
+
+//    public static Ingredient getIngredient(String name) {
+//        Ingredient ingredient = new Ingredient(loadImage("resources/vine.png"), new Point(10, 10), new Velocity(0, 0));
+//        ingredient.setName(name);
+//        return ingredient;   
+//    }
+    
+    public Ingredient(Image image, Point position, Velocity velocity) {
+        super(image, position, velocity);
+    }
+
+
 
     @Override
     public Ingredient clone() throws CloneNotSupportedException {
@@ -135,13 +155,13 @@ public class Ingredient extends Actor {
         preferredSize = new Dimension(50, 50);
     }
 
-//    public Ingredient(Image image, Point position, Velocity velocity) {
     public Ingredient(Image image, Point position) {
         super(image, position, new Velocity(0, 0));
     }
 
     private boolean visible = true;
     private Dimension preferredSize;
+    private String name;
 
     /**
      * @return the visible
@@ -170,6 +190,20 @@ public class Ingredient extends Actor {
      */
     public void setPreferredSize(Dimension preferredSize) {
         this.preferredSize = preferredSize;
+    }
+
+    /**
+     * @return the name
+     */
+    public String getName() {
+        return name;
+    }
+
+    /**
+     * @param name the name to set
+     */
+    public void setName(String name) {
+        this.name = name;
     }
 
 
