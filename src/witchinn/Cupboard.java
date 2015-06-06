@@ -29,7 +29,7 @@ public class Cupboard {
         getIngredients()[1][0] = Ingredient.getIngredient(Ingredient.INGREDIENT_EGGSHELLS);
         getIngredients()[3][6] = Ingredient.getIngredient(Ingredient.INGREDIENT_GAS);
         getIngredients()[3][0] = Ingredient.getIngredient(Ingredient.INGREDIENT_MUSHROOMS);
-//       getIngredients()[3][2] = Ingredient.getIngredient(Ingredient.INGREDIENT_PETALS);
+//       getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_PETALS);
         getIngredients()[3][1] = Ingredient.getIngredient(Ingredient.INGREDIENT_PINK);
         getIngredients()[3][2] = Ingredient.getIngredient(Ingredient.INGREDIENT_SAGE);
         getIngredients()[3][3] = Ingredient.getIngredient(Ingredient.INGREDIENT_ROSE);
@@ -47,7 +47,6 @@ public class Cupboard {
                     ingPosn.x += col * 50;
                     ingPosn.y += row * 75;
                     ingredients[row][col].setPosition(ingPosn);
-//                    graphics.drawImage(ingredients[row][col].getScaledImage(), ingPosn.x, ingPosn.y, null);
                     ingredients[row][col].paint(graphics);
                 }
             }
