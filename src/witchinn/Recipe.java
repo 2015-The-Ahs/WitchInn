@@ -112,59 +112,71 @@ public class Recipe {
             graphics.setFont(new Font("Comic Sans", Font.PLAIN, 12));
         }
 
-//        graphics.setFont(new Font("Comic Sans", Font.PLAIN, 12));
+        int x = 230;
+        int y = 200;
+        int yShift = 50;
+        
         graphics.setColor(Color.BLACK);
-        graphics.drawString(getTitle(), 230, 200);
+        graphics.drawString(getTitle(), x, y);
+        
+        for (Ingredient ingredient : ingredients){
+            y += yShift;
+            graphics.drawString(ingredient.getName(), x, y);
+        }
+        
+        
     }
 //</editor-fold>
 
+//<editor-fold defaultstate="collapsed" desc="Properties">
     private Image book;
     private String title = "";
     private ArrayList<Ingredient> ingredients;
-
+    
     private Color color;
     private Font font;
-
+    
     /**
      * @return the book
      */
     public Image getBook() {
         return book;
     }
-
+    
     /**
      * @param book the book to set
      */
     public void setBook(Image book) {
         this.book = book;
     }
-
+    
     /**
      * @return the title
      */
     public String getTitle() {
         return title;
     }
-
+    
     /**
      * @param title the title to set
      */
     public void setTitle(String title) {
         this.title = title;
     }
-
+    
     /**
      * @return the ingredients
      */
     public ArrayList<Ingredient> getIngredients() {
         return ingredients;
     }
-
+    
     /**
      * @param ingredients the ingredients to set
      */
     public void setIngredients(ArrayList<Ingredient> ingredients) {
         this.ingredients = ingredients;
     }
+//</editor-fold>
 
 }
