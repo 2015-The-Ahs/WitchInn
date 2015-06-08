@@ -39,23 +39,22 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     Cauldron cauldron;
     private Ingredient ingredient;
     private Recipe recipe;
-//    private Recipe recipebooktwo;
+
     
     
     private boolean showRecipe = false;
-//    private boolean showRecipebooktwo = false;
+
 
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
         cupboard = new Cupboard();
-        cupboard.setPosition(new Point(100, 100));
+        cupboard.setPosition(new Point(10, 85));
         addMouseMotionListener(this);
-        cauldron = new Cauldron(new Point(350, 350), new Velocity(0,0));
+        cauldron = new Cauldron(new Point(150, 450), new Velocity(0,0));
         
         this.getActors().add(cauldron);
 
         this.recipe = new Recipe(RECIPE_POACHED_NEWT_WINGS);
-//        this.recipebooktwo = new Recipe();
         
     }
 
@@ -89,8 +88,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             soundManager.play(Magic_Music, Audio.LOOP_INFINITE);
         } else if (e.getKeyCode() == KeyEvent.VK_R)
             showRecipe = !showRecipe;
-//        } else if (e.getKeyCode() == KeyEvent.VK_J)
-//            showRecipebooktwo = !showRecipebooktwo;
+
         
             }
 
@@ -114,12 +112,12 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
-//        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
+
 
         for (Ingredient myIngredient : cupboard.getIngredientList()) {
             if (myIngredient != null) {
                 if (myIngredient.contains(e.getPoint())) {
-//                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
+
 
                     try {
                         selected = myIngredient.clone();
@@ -142,16 +140,14 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
         if (selected != null) {
             selected.paint(graphics);
-//            System.out.println("pict ");
+
         }
         
         if ((recipe != null) && (showRecipe)){
             recipe.draw(graphics);
         }
         
-//         if ((recipebooktwo != null) && (showRecipe)){
-//            recipebooktwo.draw(graphics);
-//        }
+
        
     }
 

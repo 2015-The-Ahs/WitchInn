@@ -46,13 +46,13 @@ public class Ingredient extends Actor {
 
         switch (name){
             case INGREDIENT_TURTLE:
-                return new Ingredient(loadImage("resources/turtle.PNG"), new Point(30, 10));
+                return new Ingredient(loadImage("resources/turtle.PNG"), new Point(10, 10));
                 
             case INGREDIENT_TREE:
-                return new Ingredient(loadImage("resources/tree.PNG"), new Point(60, 10));
+                return new Ingredient(loadImage("resources/tree.PNG"), new Point(10, 10));
                 
             case INGREDIENT_CACTUS:
-                return new Ingredient(loadImage("resources/cactus.PNG"), new Point(40, 10));
+                return new Ingredient(loadImage("resources/cactus.PNG"), new Point(10, 10));
                 
             case INGREDIENT_BULB:
                 return new Ingredient(loadImage("resources/bulb.PNG"), new Point(10, 10)); 
@@ -103,11 +103,15 @@ public class Ingredient extends Actor {
                 return new Ingredient(loadImage("resources/sunlight.PNG"), new Point(10, 10)); 
                 
             case INGREDIENT_VASE:
-                return new Ingredient(loadImage("resources/vase.PNG"), new Point(10, 10));  
+
+                return new Ingredient(loadImage("resources/vase.PNG"), new Point(10, 10)); 
+                
+    
                 
             default:
             case INGREDIENT_VINE:
                 return new Ingredient(loadImage("resources/vine.png"), new Point(10, 10));
+
         }
     }
 //=======
