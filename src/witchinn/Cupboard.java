@@ -16,16 +16,26 @@ import java.util.ArrayList;
 public class Cupboard {
 
     {
-        ingredients = new Ingredient[4][5];
+        ingredients = new Ingredient[4][12];
 
-        getIngredients()[0][0] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-        getIngredients()[0][0].setName("Shayla");
-        getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-        getIngredients()[1][2].setName("Gemma");
-        getIngredients()[2][3] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-        getIngredients()[2][3].setName("Maya");
-        getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.TYPE_BUG);
-        getIngredients()[3][4].setName("Cara");
+        getIngredients()[1][8] = Ingredient.getIngredient(Ingredient.INGREDIENT_VINE);
+        getIngredients()[1][1] = Ingredient.getIngredient(Ingredient.INGREDIENT_GREENS);
+        getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.INGREDIENT_TURTLE);
+        getIngredients()[1][3] = Ingredient.getIngredient(Ingredient.INGREDIENT_TREE);
+        getIngredients()[1][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_BULB);
+        getIngredients()[1][5] = Ingredient.getIngredient(Ingredient.INGREDIENT_CACTUS);
+        getIngredients()[1][6] = Ingredient.getIngredient(Ingredient.INGREDIENT_DAGGER);
+        getIngredients()[1][7] = Ingredient.getIngredient(Ingredient.INGREDIENT_EARTH);
+        getIngredients()[1][0] = Ingredient.getIngredient(Ingredient.INGREDIENT_EGGSHELLS);
+        getIngredients()[3][6] = Ingredient.getIngredient(Ingredient.INGREDIENT_GAS);
+        getIngredients()[3][0] = Ingredient.getIngredient(Ingredient.INGREDIENT_MUSHROOMS);
+//       getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_PETALS);
+        getIngredients()[3][1] = Ingredient.getIngredient(Ingredient.INGREDIENT_PINK);
+        getIngredients()[3][2] = Ingredient.getIngredient(Ingredient.INGREDIENT_SAGE);
+        getIngredients()[3][3] = Ingredient.getIngredient(Ingredient.INGREDIENT_ROSE);
+
+        getIngredients()[3][4] = Ingredient.getIngredient(Ingredient.INGREDIENT_SMALLPLANT);
+        getIngredients()[3][5] = Ingredient.getIngredient(Ingredient.INGREDIENT_SUNLIGHT);
 
     }
 
@@ -37,14 +47,13 @@ public class Cupboard {
                     ingPosn.x += col * 50;
                     ingPosn.y += row * 75;
                     ingredients[row][col].setPosition(ingPosn);
-//                    graphics.drawImage(ingredients[row][col].getScaledImage(), ingPosn.x, ingPosn.y, null);
                     ingredients[row][col].paint(graphics);
                 }
             }
         }
     }
 
-    private Point position = new Point(100, 100);
+    private Point position = new Point(50, 50);
     private Ingredient[][] ingredients;
 
     /**

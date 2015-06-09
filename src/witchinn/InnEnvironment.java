@@ -24,6 +24,7 @@ import java.awt.event.MouseMotionListener;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import static witchinn.Recipe.*;
 
 /**
  *
@@ -38,19 +39,22 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     Cauldron cauldron;
     private Ingredient ingredient;
     private Recipe recipe;
+
     
     
     private boolean showRecipe = false;
 
+
     public InnEnvironment() {
         this.setBackground(ResourceTools.loadImageFromResource("resources/background.PNG").getScaledInstance(900, 580, Image.SCALE_FAST));
         cupboard = new Cupboard();
-        cupboard.setPosition(new Point(100, 100));
+        cupboard.setPosition(new Point(10, 85));
         addMouseMotionListener(this);
-        cauldron = new Cauldron(new Point(350, 350), new Velocity(0, 0));
+        cauldron = new Cauldron(new Point(150, 450), new Velocity(0,0));
+        
         this.getActors().add(cauldron);
 
-        this.recipe = new Recipe();
+        this.recipe = new Recipe(RECIPE_POACHED_NEWT_WINGS);
         
     }
 
@@ -82,10 +86,13 @@ class InnEnvironment extends Environment implements MouseMotionListener {
             soundManager.play(Magic_Music);
             } else if (e.getKeyCode() == KeyEvent.VK_0){
             soundManager.play(Magic_Music, Audio.LOOP_INFINITE);
-        } else if (e.getKeyCode() == KeyEvent.VK_R){
+        } else if (e.getKeyCode() == KeyEvent.VK_R)
             showRecipe = !showRecipe;
-        }
-    }
+
+        
+            }
+
+
 
     private class AudioEventListener implements AudioEventListenerIntf {
 
@@ -105,12 +112,12 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
     @Override
     public void environmentMouseClicked(MouseEvent e) {
-//        System.out.println("Meese - click" + e.getX() + " , " + e.getY());
+
 
         for (Ingredient myIngredient : cupboard.getIngredientList()) {
             if (myIngredient != null) {
                 if (myIngredient.contains(e.getPoint())) {
-//                    System.out.println("Selected : " + ingredient.getName() + ingredient.getObjectBoundary().toString());
+
 
                     try {
                         selected = myIngredient.clone();
@@ -133,17 +140,19 @@ class InnEnvironment extends Environment implements MouseMotionListener {
 
         if (selected != null) {
             selected.paint(graphics);
-//            System.out.println("pict ");
+
         }
         
         if ((recipe != null) && (showRecipe)){
             recipe.draw(graphics);
         }
+        
 
+       
     }
 
     
-    private void dissapear() {
+    private void disappear() {
         if (true) {
             ingredient.setPosition(100_000, 100_000);
         }
@@ -166,10 +175,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         if (selected != null) {
             selected.setPosition(e.getPoint());
             if (selected.intersects(cauldron)){
-                System.out.println("qwertyurtyusdfgh");
-                // make a sound
-                // set selected to null
-                // check things off the receipe
+                System.out.println("Hit");
+                
             }
             
         }
