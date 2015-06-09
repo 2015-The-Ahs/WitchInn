@@ -24,7 +24,10 @@ public class Cauldron extends Actor {
     }
 
     {
-        setImage(ResourceTools.loadImageFromResource("resources/EmptyC.PNG"));
+
+
+        setImage(ResourceTools.loadImageFromResource("resources/EmptyC.PNG").getScaledInstance(400, 150, Image.SCALE_FAST));
+
     }
     
     public Cauldron(Point position, Velocity velocity) {
@@ -36,11 +39,15 @@ public class Cauldron extends Actor {
 
     private Image getScaledImage() {
         return super.getImage().getScaledInstance(preferredSize.width, preferredSize.height, Image.SCALE_FAST);
+       
   }
 
      public Dimension getPreferredSize() {
+         
+       
         Dimension preferredSize = null;
         return preferredSize;
+       
     }
 
     /**
