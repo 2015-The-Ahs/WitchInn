@@ -155,6 +155,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     private void disappear() {
         if (true) {
             ingredient.setPosition(100_000, 100_000);
+           
+//           tracks.add(new Track(Magic_Music, Source.RESOURCE, "/resources/cow_.wav"));
         }
     }
 
