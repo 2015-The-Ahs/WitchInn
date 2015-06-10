@@ -18,7 +18,7 @@ public class Cupboard {
     {
         ingredients = new Ingredient[4][12];
 
-        getIngredients()[1][8] = Ingredient.getIngredient(Ingredient.INGREDIENT_VINE);
+        getIngredients()[3][7] = Ingredient.getIngredient(Ingredient.INGREDIENT_VINE);
         getIngredients()[1][1] = Ingredient.getIngredient(Ingredient.INGREDIENT_GREENS);
         getIngredients()[1][2] = Ingredient.getIngredient(Ingredient.INGREDIENT_TURTLE);
         getIngredients()[1][3] = Ingredient.getIngredient(Ingredient.INGREDIENT_TREE);
@@ -45,7 +45,7 @@ public class Cupboard {
                 if ((ingredients[row][col] != null) && (ingredients[row][col].isVisible())) {
                     Point ingPosn = (Point) getPosition().clone();
                     ingPosn.x += col * 50;
-                    ingPosn.y += row * 75;
+                    ingPosn.y += row * 60;
                     ingredients[row][col].setPosition(ingPosn);
                     ingredients[row][col].paint(graphics);
                 }

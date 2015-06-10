@@ -46,7 +46,7 @@ public class Ingredient extends Actor {
 
         switch (name){
             case INGREDIENT_TURTLE:
-                return new Ingredient(name, loadImage("resources/turtle.PNG"), new Point(10, 10));
+                return new Ingredient(name, loadImage("resources/turtle.PNG").getScaledInstance(20, 40, Image.SCALE_FAST), new Point(10, 10));
                 
             case INGREDIENT_TREE:
                 return new Ingredient(name, loadImage("resources/tree.PNG"), new Point(10, 10));
@@ -147,7 +147,7 @@ public class Ingredient extends Actor {
     }
 
     {
-        preferredSize = new Dimension(50, 50);
+        preferredSize = new Dimension(35, 65);
     }
 
     public Ingredient(String name, Image image, Point position) {
