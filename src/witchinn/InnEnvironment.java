@@ -73,12 +73,12 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     }
     private SoundManager soundManager;
     private static final String Magic_Music = "Magic";
-    private static final String water = "Water";
+    private static final String SOUND_WATER = "Water";
 
     private ArrayList<Track> getTracks() {
         ArrayList<Track> tracks = new ArrayList<>();
         tracks.add(new Track(Magic_Music, Source.RESOURCE, "/resources/witch_music.wav"));
-        tracks.add(new Track(water, Source.RESOURCE, "/resources/water_plop.wav"));
+        tracks.add(new Track(SOUND_WATER, Source.RESOURCE, "/resources/water_plop.wav"));
         return tracks;
     }
 
@@ -91,7 +91,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         } else if (e.getKeyCode() == KeyEvent.VK_R) {
             showRecipe = !showRecipe;
         } else if (e.getKeyCode() == KeyEvent.VK_P) {
-            soundManager.play(water);
+            soundManager.play(SOUND_WATER);
         }
 //        } else if (e.getKeyCode() == KeyEvent.VK_J)
 //            showRecipebooktwo = !showRecipebooktwo;
@@ -106,8 +106,7 @@ class InnEnvironment extends Environment implements MouseMotionListener {
         }
     }
 
-    static {
-
+    {
         AudioPlayer.play("/resources/witch_music.wav");
     }
 
@@ -163,9 +162,8 @@ class InnEnvironment extends Environment implements MouseMotionListener {
     }
 
     private void disappear() {
-        if (true) {
-            ingredient.setPosition(100_000, 100_000);
-        }
+        ingredient.setPosition(100_000, 100_000);
+        this.soundManager.play(SOUND_WATER);
     }
 
     private void setResizable(boolean b) {
