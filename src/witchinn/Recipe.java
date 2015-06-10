@@ -77,14 +77,14 @@ public class Recipe {
     
     
     {
-        setBook(ResourceTools.loadImageFromResource("resources/old_book.png"));
+        setBook(ResourceTools.loadImageFromResource("resources/shells.png"));
         setIngredients(new ArrayList<>());
         
         setTitle("");
     }
     
     public Recipe(String title) {
-        book = ResourceTools.loadImageFromResource("resources/old_book.png");
+        book = ResourceTools.loadImageFromResource("resources/shells.png");
         this.title = title;
     }
 
