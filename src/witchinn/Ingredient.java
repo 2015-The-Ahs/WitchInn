@@ -147,7 +147,7 @@ public class Ingredient extends Actor {
     }
 
     {
-        preferredSize = new Dimension(50, 50);
+        preferredSize = new Dimension(45, 60);
     }
 
     public Ingredient(String name, Image image, Point position) {
